@@ -14,7 +14,7 @@
             <a class="navbar-brand" href="./">Muzlock Admin</a>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="btn btn-outline-light" aria-current="page" href="#">Sign Out</a>
+                    <a class="btn btn-outline-light" aria-current="page" href="../php-apis/logout.php">Sign Out</a>
                 </li>
             </ul>
         </div>
