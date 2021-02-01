@@ -26,7 +26,8 @@
                 <h1>Sidebar</h1>
             </div>
             <div class="col-10">
-                <h1>Dashboard</h1>
+                <h1>Profile</h1>
+
             </div>
         </div>
     </div>

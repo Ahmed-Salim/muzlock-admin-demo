@@ -1,12 +1,12 @@
-const loginForm = document.querySelector('form');
-const loginFieldset = document.querySelector('#login-fieldset');
+const registerForm = document.querySelector('form');
+const registerFieldset = document.querySelector('#registerFieldset');
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
 
-    loginForm.addEventListener('submit', function (event) {
-        if (!loginForm.checkValidity()) {
+    registerForm.addEventListener('submit', function (event) {
+        if (!registerForm.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
         } else {
@@ -14,40 +14,41 @@ const loginFieldset = document.querySelector('#login-fieldset');
             event.stopPropagation()
 
             // Bind the FormData object and the form element
-            const FD = new FormData(loginForm);
+            const FD = new FormData(registerForm);
 
-            loginFieldset.disabled = true;
+            registerFieldset.disabled = true;
 
             const XHR = new XMLHttpRequest();
 
             // Define what happens on successful data submission
             XHR.addEventListener("load", function (event) {
-                loginForm.classList.remove('was-validated');
+                registerForm.classList.remove('was-validated');
 
+                console.log(event.target.responseText);
                 let responseMsg = JSON.parse(event.target.responseText);
 
                 if (responseMsg.status.includes('success')) {
-                    window.location.href = "./dashboard";
+                    window.location.href = "../dashboard";
                 } else {
                     alert(responseMsg.description);
 
-                    loginFieldset.disabled = false;
+                    registerFieldset.disabled = false;
                 }
             });
 
             // Define what happens in case of error
             XHR.addEventListener("error", function (event) {
                 alert('Oops! Something went wrong.');
-                loginFieldset.disabled = false;
+                registerFieldset.disabled = false;
             });
 
             // Set up our request
-            XHR.open("POST", "./php-apis/login.php");
+            XHR.open("POST", "../php-apis/register.php");
 
             // The data sent is what the user provided in the form
             XHR.send(FD);
         }
 
-        loginForm.classList.add('was-validated')
+        registerForm.classList.add('was-validated')
     }, false)
 })()
