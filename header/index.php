@@ -17,7 +17,7 @@ function urlPrefix()
     }
 }
 
-if (isset($_SESSION['id'])) {
+if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     if (basename(getcwd()) === 'register'  || basename(getcwd()) === basename(dirname(__DIR__))) {
         header("Location: " . urlPrefix() . "dashboard/");
         die();
