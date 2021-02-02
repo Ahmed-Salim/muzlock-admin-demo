@@ -7,7 +7,7 @@ include_once '../functions/index.php';
 
 $response_msg = array();
 
-if (empty($_POST["fullName"]) || empty($_POST["age"]) || empty($_POST["email"]) || empty($_POST["password"])) {
+if (empty($_POST["fullName"]) || empty($_POST["age"]) || empty($_POST["email"]) || empty($_POST["password"]) || empty($_POST["imageUrl"])) {
     $response_msg['status'] = 'error';
     $response_msg['description'] = 'Required Fields Empty!';
 } else {
@@ -22,6 +22,7 @@ if (empty($_POST["fullName"]) || empty($_POST["age"]) || empty($_POST["email"]) 
             $response_msg['description'] = 'Email Already Registered! Please Login!';
         }
     } else {
+        $imageUrl = mysqli_real_escape_string($conn, clean_input($_POST["imageUrl"]));
         $fullName = mysqli_real_escape_string($conn, clean_input($_POST["fullName"]));
         $age = mysqli_real_escape_string($conn, clean_input($_POST["age"]));
         $country = mysqli_real_escape_string($conn, clean_input($_POST["country"]));
@@ -37,7 +38,7 @@ if (empty($_POST["fullName"]) || empty($_POST["age"]) || empty($_POST["email"]) 
         $jobTitle = mysqli_real_escape_string($conn, clean_input($_POST["jobTitle"]));
         $user_password = mysqli_real_escape_string($conn, clean_input($_POST["password"]));
 
-        $sql2 = "INSERT INTO user (user_email, user_pass, user_name, user_age, user_country, user_sect, user_revert, user_religion, user_phone, user_gender, user_dob, user_lang, user_origin, user_smoke, user_jobTitle) VALUES ('$email', '$user_password', '$fullName', '$age', '$country', '$sect', '$revert', '$religion', '$phone', '$gender', '$birthDate', '$language', '$origin', '$smoke', '$jobTitle')";
+        $sql2 = "INSERT INTO user (user_img, user_email, user_pass, user_name, user_age, user_country, user_sect, user_revert, user_religion, user_phone, user_gender, user_dob, user_lang, user_origin, user_smoke, user_jobTitle) VALUES ('$imageUrl', '$email', '$user_password', '$fullName', '$age', '$country', '$sect', '$revert', '$religion', '$phone', '$gender', '$birthDate', '$language', '$origin', '$smoke', '$jobTitle')";
 
         if (mysqli_query($conn, $sql2)) {
             $response_msg['status'] = 'success';
@@ -45,7 +46,7 @@ if (empty($_POST["fullName"]) || empty($_POST["age"]) || empty($_POST["email"]) 
 
             $_SESSION['id'] = mysqli_insert_id($conn);
             $_SESSION['user_name'] = $fullName;
-            $_SESSION['user_img'] = '';
+            $_SESSION['user_img'] = $imageUrl;
         } else {
             $response_msg['status'] = 'error';
             $response_msg['description'] = "Error: " . mysqli_error($conn);

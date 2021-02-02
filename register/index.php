@@ -5,11 +5,19 @@
         <div class="col d-flex justify-content-center align-items-center">
             <form class="border rounded shadow my-5 py-5 px-5 w-50 bg-white needs-validation" novalidate>
                 <fieldset class="mb-3" id="registerFieldset">
-                    <legend class="text-center display-1 mb-5">Register</legend>
+                    <legend class="text-center display-1">Register</legend>
+                    <div class="row mb-3 align-items-center">
+                        <label for="imageUrl" class="col-sm-2 col-form-label col-form-label-sm">
+                            <img class="img-fluid rounded-circle" width="100px" src="https://via.placeholder.com/150" alt="Image URL" />
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control form-control-sm" id="imageUrl" name="imageUrl" placeholder="Image URL" autofocus required>
+                        </div>
+                    </div>
                     <div class="row mb-3">
                         <label for="fullName" class="col-sm-2 col-form-label col-form-label-sm">Full Name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control form-control-sm" id="fullName" name="fullName" autofocus required>
+                            <input type="text" class="form-control form-control-sm" id="fullName" name="fullName" required>
                             <div class="invalid-feedback">
                                 Required Field
                             </div>
