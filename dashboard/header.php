@@ -58,6 +58,10 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="<?php echo urlPrefix(); ?>profile/">Profile</a></li>
+                            <li><a class="dropdown-item" href="<?php echo urlPrefix(); ?>liked/">Liked Users</a></li>
+                            <li><a class="dropdown-item" href="<?php echo urlPrefix(); ?>unliked/">Unliked Users</a></li>
+                            <li><a class="dropdown-item" href="<?php echo urlPrefix(); ?>favourite/">Favourite Users</a></li>
+                            <li><a class="dropdown-item" href="<?php echo urlPrefix(); ?>blocked/">Blocked Users</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
