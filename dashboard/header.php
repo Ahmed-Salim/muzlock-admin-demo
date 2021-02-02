@@ -46,7 +46,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="<?php echo urlPrefix(); ?>">Muzlock Admin</a>
+            <a class="navbar-brand" href="<?php echo urlPrefix(); ?>">Muzlock Admin Demo</a>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="btn btn-outline-light" aria-current="page" href="<?php echo urlPrefix(); ?>../php-apis/logout.php">Sign Out</a>
@@ -55,7 +55,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         </div>
     </nav>
 
-    <div class="container-fluid py-2">
+    <div class="container-fluid py-3">
         <div class="row">
             <div class="col-2 border-end">
                 <div class="list-group list-group-flush sticky-top">
