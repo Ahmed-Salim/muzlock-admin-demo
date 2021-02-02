@@ -23,6 +23,8 @@ if (empty($_POST["email"]) || empty($_POST["password"])) {
             $response_msg['description'] = 'Login Successfull';
 
             $_SESSION['id'] = $row['id'];
+            $_SESSION['user_name'] = $row['user_name'];
+            $_SESSION['user_img'] = $row['user_img'];
         }
     } else {
         $response_msg['status'] = 'error';

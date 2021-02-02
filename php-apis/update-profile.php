@@ -39,6 +39,9 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
                     $sql2 = "UPDATE user SET user_email='$email', user_pass = '$user_password', user_img = '$imageUrl', user_name = '$fullName', user_age = '$age', user_country = '$country', user_sect = '$sect', user_revert = '$revert', user_religion = '$religion', user_phone = '$phone', user_gender = '$gender', user_dob = '$birthDate', user_lang = '$language', user_origin = '$origin', user_smoke = '$smoke', user_jobTitle = '$jobTitle' WHERE id=$user_id";
 
                     if (mysqli_query($conn, $sql2)) {
+                        $_SESSION['user_name'] = $fullName;
+                        $_SESSION['user_img'] = $imageUrl;
+
                         header("Location: ../dashboard/profile/");
                         die();
                     } else {
@@ -62,6 +65,9 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
                         $sql2 = "UPDATE user SET user_email='$email', user_pass = '$user_password', user_name = '$fullName', user_age = '$age', user_country = '$country', user_sect = '$sect', user_revert = '$revert', user_religion = '$religion', user_phone = '$phone', user_gender = '$gender', user_dob = '$birthDate', user_lang = '$language', user_origin = '$origin', user_smoke = '$smoke', user_jobTitle = '$jobTitle' WHERE id=$user_id";
 
                         if (mysqli_query($conn, $sql2)) {
+                            $_SESSION['user_name'] = $fullName;
+                            $_SESSION['user_img'] = $imageUrl;
+
                             header("Location: ../dashboard/profile/");
                             die();
                         } else {

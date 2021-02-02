@@ -44,6 +44,8 @@ if (empty($_POST["fullName"]) || empty($_POST["age"]) || empty($_POST["email"]) 
             $response_msg['description'] = 'New Record Created Successfully!';
 
             $_SESSION['id'] = mysqli_insert_id($conn);
+            $_SESSION['user_name'] = $fullName;
+            $_SESSION['user_img'] = '';
         } else {
             $response_msg['status'] = 'error';
             $response_msg['description'] = "Error: " . mysqli_error($conn);
