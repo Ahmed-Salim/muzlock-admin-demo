@@ -22,7 +22,7 @@ if (mysqli_num_rows($result) > 0) {
                         <fieldset class="mb-3" id="registerFieldset">
                             <div class="row mb-3 align-items-center">
                                 <label for="imageUrl" class="col-sm-2 col-form-label col-form-label-sm">
-                                    <img class="img-fluid rounded-circle" width="100px" src="<?php echo $row['user_img']; ?>" alt="Image URL" />
+                                    <img class="img-fluid rounded" width="100px" src="<?php echo $row['user_img']; ?>" alt="<?php echo $row['user_name']; ?>" />
                                 </label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control form-control-sm" id="imageUrl" name="imageUrl" value="<?php echo $row['user_img']; ?>" placeholder="Image URL" autofocus required>

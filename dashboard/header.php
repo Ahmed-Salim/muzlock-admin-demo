@@ -54,8 +54,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img class="img-fluid rounded-circle" style="width: 25px;" src="<?php echo $_SESSION['user_img']; ?>" alt="<?php echo $_SESSION['user_name']; ?>">
-                            <?php echo $_SESSION['user_name']; ?>
+                            <img class="img-fluid rounded" style="width: 25px;" src="<?php echo $_SESSION['user_img']; ?>" alt="<?php echo $_SESSION['user_name']; ?>">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="<?php echo urlPrefix(); ?>profile/">Profile</a></li>
@@ -76,16 +75,16 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
                 <div class="list-group list-group-flush sticky-top">
                     <li class="list-group-item text-center">
                         <figure class="figure">
-                            <img class="figure-img img-fluid rounded-circle" src="<?php echo $_SESSION['user_img']; ?>" alt="<?php echo $_SESSION['user_name']; ?>">
+                            <img class="figure-img img-fluid rounded" style="width: 200px;" src="<?php echo $_SESSION['user_img']; ?>" alt="<?php echo $_SESSION['user_name']; ?>">
                             <figcaption class="fs-4 figure-caption text-center"><?php echo $_SESSION['user_name']; ?></figcaption>
                         </figure>
                     </li>
                     <a href="<?php echo urlPrefix(); ?>" class="list-group-item list-group-item-action">Dashboard</a>
-                    <a href="<?php echo urlPrefix() . '/profile'; ?>" class="list-group-item list-group-item-action">Profile</a>
-                    <a href="<?php echo urlPrefix(); ?>" class="list-group-item list-group-item-action">Liked Users</a>
-                    <a href="<?php echo urlPrefix(); ?>" class="list-group-item list-group-item-action">Unliked Users</a>
-                    <a href="<?php echo urlPrefix(); ?>" class="list-group-item list-group-item-action">Favourite Users</a>
-                    <a href="<?php echo urlPrefix(); ?>" class="list-group-item list-group-item-action">Blocked Users</a>
+                    <a href="<?php echo urlPrefix() . 'profile/'; ?>" class="list-group-item list-group-item-action">Profile</a>
+                    <a href="<?php echo urlPrefix() . 'liked/'; ?>" class="list-group-item list-group-item-action">Liked Users</a>
+                    <a href="<?php echo urlPrefix() . 'unliked/'; ?>" class="list-group-item list-group-item-action">Unliked Users</a>
+                    <a href="<?php echo urlPrefix() . 'favourite/'; ?>" class="list-group-item list-group-item-action">Favourite Users</a>
+                    <a href="<?php echo urlPrefix() . 'blocked/'; ?>" class="list-group-item list-group-item-action">Blocked Users</a>
                 </div>
             </div>
             <div class="col-10">
