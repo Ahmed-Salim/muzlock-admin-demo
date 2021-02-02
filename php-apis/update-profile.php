@@ -6,7 +6,7 @@ include_once '../db-config/index.php';
 include_once '../functions/index.php';
 
 if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
-    if (empty($_POST["fullName"]) || empty($_POST["age"]) || empty($_POST["email"]) || empty($_POST["password"])) {
+    if (empty($_POST["fullName"]) || empty($_POST["age"]) || empty($_POST["email"]) || empty($_POST["password"]) || empty($_POST["imageUrl"])) {
         echo 'Required Fields Empty!';
 
         header("Refresh:3; url=../dashboard/profile/");

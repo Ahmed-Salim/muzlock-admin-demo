@@ -25,7 +25,7 @@ if (mysqli_num_rows($result) > 0) {
                                     <img class="img-fluid rounded-circle" width="100px" src="<?php echo $row['user_img']; ?>" alt="Image URL" />
                                 </label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" id="imageUrl" name="imageUrl" value="<?php echo $row['user_img']; ?>" placeholder="Image URL" autofocus>
+                                    <input type="text" class="form-control form-control-sm" id="imageUrl" name="imageUrl" value="<?php echo $row['user_img']; ?>" placeholder="Image URL" autofocus required>
                                 </div>
                             </div>
                             <div class="row mb-3">
