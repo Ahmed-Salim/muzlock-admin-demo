@@ -13,6 +13,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         die();
     } else {
         $user_id = $_SESSION['id'];
+        $imageUrl = mysqli_real_escape_string($conn, clean_input($_POST["imageUrl"]));
         $email = mysqli_real_escape_string($conn, clean_input($_POST["email"]));
         $fullName = mysqli_real_escape_string($conn, clean_input($_POST["fullName"]));
         $age = mysqli_real_escape_string($conn, clean_input($_POST["age"]));
@@ -35,7 +36,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 if ($email === $row['user_email']) {
-                    $sql2 = "UPDATE user SET user_email='$email', user_pass = '$user_password', user_name = '$fullName', user_age = '$age', user_country = '$country', user_sect = '$sect', user_revert = '$revert', user_religion = '$religion', user_phone = '$phone', user_gender = '$gender', user_dob = '$birthDate', user_lang = '$language', user_origin = '$origin', user_smoke = '$smoke', user_jobTitle = '$jobTitle' WHERE id=$user_id";
+                    $sql2 = "UPDATE user SET user_email='$email', user_pass = '$user_password', user_img = '$imageUrl', user_name = '$fullName', user_age = '$age', user_country = '$country', user_sect = '$sect', user_revert = '$revert', user_religion = '$religion', user_phone = '$phone', user_gender = '$gender', user_dob = '$birthDate', user_lang = '$language', user_origin = '$origin', user_smoke = '$smoke', user_jobTitle = '$jobTitle' WHERE id=$user_id";
 
                     if (mysqli_query($conn, $sql2)) {
                         header("Location: ../dashboard/profile/");

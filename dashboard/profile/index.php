@@ -20,10 +20,18 @@ if (mysqli_num_rows($result) > 0) {
                     <h1 class="mb-3">Profile</h1>
                     <form method="POST" action="../../php-apis/update-profile.php" id="profileForm" class="needs-validation" novalidate>
                         <fieldset class="mb-3" id="registerFieldset">
+                            <div class="row mb-3 align-items-center">
+                                <label for="imageUrl" class="col-sm-2 col-form-label col-form-label-sm">
+                                    <img class="img-fluid rounded-circle" width="100px" src="<?php echo $row['user_img']; ?>" alt="Image URL" />
+                                </label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control form-control-sm" id="imageUrl" name="imageUrl" value="<?php echo $row['user_img']; ?>" placeholder="Image URL" autofocus>
+                                </div>
+                            </div>
                             <div class="row mb-3">
                                 <label for="fullName" class="col-sm-2 col-form-label col-form-label-sm">Full Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control form-control-sm" id="fullName" name="fullName" value="<?php echo $row['user_name']; ?>" autofocus required>
+                                    <input type="text" class="form-control form-control-sm" id="fullName" name="fullName" value="<?php echo $row['user_name']; ?>" required>
                                     <div class="invalid-feedback">
                                         Required Field
                                     </div>
