@@ -55,9 +55,16 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         </div>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid py-2">
         <div class="row">
-            <div class="col-2 bg-secondary text-light">
-
+            <div class="col-2 border-end">
+                <div class="list-group list-group-flush sticky-top">
+                    <a href="<?php echo urlPrefix(); ?>" class="list-group-item list-group-item-action">Dashboard</a>
+                    <a href="<?php echo urlPrefix() . '/profile'; ?>" class="list-group-item list-group-item-action">Profile</a>
+                    <a href="<?php echo urlPrefix(); ?>" class="list-group-item list-group-item-action">Liked Users</a>
+                    <a href="<?php echo urlPrefix(); ?>" class="list-group-item list-group-item-action">Unliked Users</a>
+                    <a href="<?php echo urlPrefix(); ?>" class="list-group-item list-group-item-action">Favourite Users</a>
+                    <a href="<?php echo urlPrefix(); ?>" class="list-group-item list-group-item-action">Blocked Users</a>
+                </div>
             </div>
             <div class="col-10">
