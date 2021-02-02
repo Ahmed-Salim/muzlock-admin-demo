@@ -14,10 +14,10 @@ if (mysqli_num_rows($result) > 0) {
 
 ?>
 
-        <div class="container-fluid my-1">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col">
-                    <h1 class="mb-2">Profile</h1>
+                    <h1 class="mb-3">Profile</h1>
                     <form method="POST" action="../../php-apis/update-profile.php" id="profileForm" class="needs-validation" novalidate>
                         <fieldset class="mb-3" id="registerFieldset">
                             <div class="row mb-3">
