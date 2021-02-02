@@ -9,7 +9,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
     if (empty($_POST["fullName"]) || empty($_POST["age"]) || empty($_POST["email"]) || empty($_POST["password"])) {
         echo 'Required Fields Empty!';
 
-        header("Refresh:2; url=../dashboard/profile/");
+        header("Refresh:3; url=../dashboard/profile/");
         die();
     } else {
         $user_id = $_SESSION['id'];
@@ -43,7 +43,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
                     } else {
                         echo "Error: " . mysqli_error($conn);
 
-                        header("Refresh:2; url=../dashboard/profile/");
+                        header("Refresh:3; url=../dashboard/profile/");
                         die();
                     }
                 } else {
@@ -54,7 +54,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
                         while ($row3 = mysqli_fetch_assoc($result3)) {
                             echo 'Email:' . $email . ' is Already Registered!';
 
-                            header("Refresh:2; url=../dashboard/profile/");
+                            header("Refresh:3; url=../dashboard/profile/");
                             die();
                         }
                     } else {
@@ -66,7 +66,7 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
                         } else {
                             echo "Error: " . mysqli_error($conn);
 
-                            header("Refresh:2; url=../dashboard/profile/");
+                            header("Refresh:3; url=../dashboard/profile/");
                             die();
                         }
                     }
@@ -75,14 +75,14 @@ if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         } else {
             echo 'Please Login Again to Continue!';
 
-            header("Refresh:2; url=./logout.php");
+            header("Refresh:3; url=./logout.php");
             die();
         }
     }
 } else {
     echo 'Please Login Again to Continue!';
 
-    header("Refresh:2; url=./logout.php");
+    header("Refresh:3; url=./logout.php");
     die();
 }
 
